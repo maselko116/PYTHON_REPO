@@ -1,0 +1,114 @@
+# ZADANIE PRZYKŁADOWE
+print ("Hello, World!")
+
+#ZADANIE 2
+
+import math
+liczba_calkowita = int(input("Wprowadz liczbe calkowita:"))
+if liczba_calkowita >= 0:
+    print("wartosc bezwzgledna tej liczby to: ",liczba_calkowita)
+else:
+    print("wartosc bezwzgledna tej liczby to: ",abs(liczba_calkowita))
+
+#ZADANIE 3
+liczba_a = float(input("Podaj liczbe a: "))
+if liczba_a <= 100 and liczba_a >= 0:
+    print("Ta liczba jest w przediale od 0 do 100")
+elif liczba_a > 100:
+    print("Ta liczba jest wieksza od 100")
+elif liczba_a < 0:
+    print("Ta liczba jest mniejsza od 0")
+
+#ZADANIE 4
+
+print("1")
+print("2")
+print("3")
+print("4")
+cyfra = input("Podaj cyfre z klawiatury: ")
+
+match cyfra:
+    case "1":
+        print("wybrano cyfre 1")
+    case "2":
+        print("wybrano cyfre 2")
+    case "3":
+        print("wybrano cyfre 3")
+    case "4":
+        print("wybrano cyfre 4")
+    case _:
+        print("wybrano zla wartosc wybierz inna")
+
+#ZADANIE 5
+
+match czy_slonce:
+   # case "T":
+     #   print("jest slonecznie :)")
+    case "t" | "T":
+        print("jest slonecznie :)")
+    case "n":
+        print("ubierz sie cieplo - brak slonca")
+    case "N":
+        print("ubierz sie cieplo - brak slonca")
+    case _:
+        print("wprowadz poprawnie wartosc")
+
+#ZADAENIE 6
+
+dzien_tygodnia = input("Wybierz dzien tygodnia: ")
+
+match dzien_tygodnia:
+
+    case "poniedziałek":
+        print("wybrałeś poniedziałek")
+    case "wtorek":
+        print("wybrałeś wtorek")
+    case "środa":
+        print("wybrałeś środę")
+    case "czwartek":
+        print("wybrałeś czwartek")
+    case "piątek":
+        print("wybrałeś piatek")
+    case "sobota":
+        print("wybrałeś sobotę")
+    case "niedziela":
+        print("wybrałeś niedzielę")
+    case _:
+        print("wybierz poprawnie(z polskimi znakami i małą literą)")
+
+#ZADANIE 7
+
+import math
+nr_indexu = int(input("Podaj numer indexu: "))
+if nr_indexu % 2 == 0:
+    plec = "mężczyzna"
+else:
+    plec = "kobieta"
+if nr_indexu > 10000:
+    print("student rozpoczął studia w 2019 i jego płeć to: ",plec)
+elif nr_indexu >= 9000 and nr_indexu <=9999:
+    print("student rozpoczął studia w 2018 i jego płeć to: ",plec)
+elif nr_indexu >= 8000 and nr_indexu <=8999:
+    print("student rozpoczął studia w 2017 i jego płeć to: ",plec)
+elif nr_indexu >= 7000 and nr_indexu <= 7999:
+    print("student rozpoczął studia w 2016 i jego płeć to: ",plec)
+elif nr_indexu < 7000:
+    print("student rozpoczął studia w 2015 lub wczesniej i jego płeć to: ",plec)
+
+#ZADANIE 8
+
+import math
+
+a = int(input("wprowadź a do równania kwadratowego z klawiatury: "))
+b = int(input("wprowadź b do równania kwadratowego z klawiatury: "))
+c = int(input("wprowadź c do równania kwadratowego z klawiatury: "))
+delta = (b**2)-(4*a*c)
+print("delta wynosi: ", delta)
+x1 = (-b - delta)/(2*a)
+x2 = (-b + delta)/(2*a)
+if delta <0:
+    print("brak pierwiastków")
+elif delta == 0:
+    print ("Istnieje jeden pierwiastek podwójny: ", "x1 = x2" , x1)
+elif delta > 0:
+    print ("sa dwa pierwiastki dla tej delty: ","x1 = ",x1," oraz ","x2 = ",x2)
