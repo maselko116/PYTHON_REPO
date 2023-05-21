@@ -1,0 +1,49 @@
+#ZADANIE 2
+tab1 = [1,1.2,4.5,2]
+tab2 = [3,7,4,2.3]
+tabLaczona = 0
+while tabLaczona != tab1 + tab2:
+    tabLaczona = tab1 + tab2
+print(tabLaczona)
+
+#ZADANIE 3
+tab1 = [1,2,4,5,12,10,4,9,11,4]
+def zliczarka(x):
+    sumaL = tab1.count(x)
+    print("suma: ",sumaL)
+    ind = tab1.index(x)
+    print("pierwsza to: ",ind)
+zliczarka(4)
+#ZADANIE 4
+tabR = []
+for i in range(20,0,-1):
+    tabR.append(i)
+    if i%3==0 or i%7==0:
+        tabR.pop()
+print(tabR)
+
+#ZADANIE 5
+tab1 = []
+
+suma = 0    #ilosc elementow
+srednia = 0
+while suma <= 14:
+    suma = suma + 1
+    x = int(input("wprowadź l.całkowita do tablicy: "))  # liczby tablicy
+    tab1.append(x)
+    print(tab1)
+srednia = sum(tab1) / len(tab1)
+print(srednia)
+
+#ZADANIE 6
+tab1 = []
+suma = 0    #ilosc elementow
+while suma < 4:
+    suma = suma + 1
+    x = int(input("wprowadź l.całkowita do tablicy: "))  # liczby tablicy
+    tab1.append(x)
+    print(tab1)
+print("minimalna: ",min(tab1))
+print("maksymalna: ",max(tab1))
+
+#ZADANIE 7

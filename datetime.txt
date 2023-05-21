@@ -1,0 +1,107 @@
+#ZADANIE 2
+import datetime
+import time
+dzisiaj = datetime.date.today()
+za_tydzien = dzisiaj + datetime.timedelta(weeks=1)
+print("dzisiaj: ",dzisiaj)
+print("data za tydzien: ", za_tydzien)
+
+#ZADANIE 3
+import datetime
+
+today = datetime.date.today()
+
+dzis_dzien_tygodnia = today.weekday()
+
+roznica = 1 - dzis_dzien_tygodnia
+
+pierwszy_wtorek = today + datetime.timedelta(days=roznica)
+
+data = pierwszy_wtorek
+data_poczatkowa = datetime.date(2023, 1, 1)
+data_docelowa = datetime.date(2023, 2, 15)
+while data < data_docelowa:
+    print(data)
+    data += datetime.timedelta(weeks=1)
+
+#ZADANIE 4
+import time
+import datetime
+date = datetime.date(2023,1,6)
+
+for i in range(3):
+    end = date
+    for j in range(30):
+        end = end + datetime.timedelta(days=1)
+        print(end)
+        if end.strftime("%A") == "Sunday":
+            print("Święto w dniu:",end)
+            date = date + datetime.timedelta(days=365)
+            break
+
+#ZADANIE 5
+import time
+import datetime
+date = datetime.date(2023,9,30)
+while date.strftime("%A") != "Monday":
+    date = date + datetime.timedelta(days=1)
+print("Pierwszy poniedzialek po 30 wrzesnia to : ",date)
+
+#ZADANIE 6
+import time
+import datetime
+dzisiaj = datetime.date.today()
+print(f"Dzisiaj:  {dzisiaj}")
+print("Data za 100 dni: ",dzisiaj + datetime.timedelta(days=100))
+
+#ZADANIE 7
+import time
+import datetime
+date = datetime.date(2023,3,1)
+date1 = datetime.date(2023,6,30)
+lista = []
+while date <= date1:
+    if date.strftime("%A") == "Saturday":
+        lista.append(date)
+    date = date + datetime.timedelta(days=1)
+x = 1
+for i in lista:
+    print(f"Sobota nr {x}: {i}")
+    x = x + 1
+
+#ZADANIE 8
+import time
+import datetime
+import calendar
+current_year = datetime.datetime.now().year
+for month in range(1, 13, 2):
+    last_day_of_month = calendar.monthrange(current_year, month)[1]
+    last_sunday = datetime.datetime(current_year, month, last_day_of_month)
+    while last_sunday.weekday() != 6:
+        last_sunday -= datetime.timedelta(1)
+    print("Ostatnia niedziela w miesiącu", last_sunday.strftime("%B"), "to: ", last_sunday.strftime("%d %B %Y"))
+
+#ZADANIE 9
+import time
+import datetime
+import calendar
+def roznicaDaty(date1,date2):
+    date1 = datetime.datetime.strptime(date1, "%Y-%m-%d %H:%M:%S")
+    date2 = datetime.datetime.strptime(date2, "%Y-%m-%d %H:%M:%S")
+    difference = date2 - date1
+    return difference.total_seconds ()
+date1 = "2022-01-01 12:00:00"
+date2 = "2022-01-02 12:00:00"
+print(roznicaDaty(date1,date2))
+
+#ZADANIE 10
+import time
+import datetime
+import calendar
+start_year = 2023
+end_year = 2024
+for year in range(start_year,end_year+1):
+    for month in range(1,13):
+        first_day_of_month = datetime.datetime(year,month,1)
+        if first_day_of_month.weekday() == 0:
+            print("Pierwszy poniedziałek miesiąca", first_day_of_month.strftime("%B"), "w roku", year, "to", first_day_of_month.strftime("%d %B %Y"))

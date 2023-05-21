@@ -1,0 +1,127 @@
+'''plik_do_zapisu = open('dzien.txt', 'a')
+dane = input("Podaj nazwÄ dnia tygodnia.\n")
+plik_do_zapisu.write(dane)
+print("Podana nazwa zostaĹa zapisana w pliku dzien.txt")
+plik_do_zapisu.close()
+
+def czytaj_plik(nazwa_pliku):
+ txt = open(nazwa_pliku)
+ print(txt.read())
+czytaj_plik ('mojplik.txt')
+
+def czytaj_n_linii_pliku (nazwa_pliku, n):
+ from itertools import islice
+ with open(nazwa_pliku) as f:
+    for linia in islice(f, n):
+        print(linia)
+czytaj_n_linii_pliku('mojplik.txt',2)
+
+import urllib.request
+import requests
+import urllib3
+plik_url = 'http://textfiles.com/music/stairway.lyr'
+http = urllib3.PoolManager()
+response = http.request('GET', plik_url)
+data = response.data.decode('utf-8')
+for line in urllib.request.urlopen(plik_url):
+    print(line.decode('utf-8'))
+response = requests.get(plik_url)
+if (response.status_code):
+    dane = response.text
+    for linia in enumerate(dane.split('\n')):
+        print(linia)
+'''
+#ZADANIE 2
+
+def odczytywanieZplikutxt(nazwa_pliku):
+    lista1 = []
+    txt = open(nazwa_pliku, 'r')
+    znaki = txt.read()
+    lista1.append(znaki)
+    for elementy in lista1:
+        print(elementy)
+odczytywanieZplikutxt('mojplik.txt')
+
+#ZADANIE 3
+def kopiowanieDoPliku(pierwszy_plik, drugi_plik):
+    otwieranie = open(pierwszy_plik, 'r')
+    znaki = otwieranie.read()
+    zapis = open(drugi_plik, 'w')
+    zapis.write(znaki)
+    zapis.close()
+kopiowanieDoPliku('mojplik.txt', 'haslo.txt')
+
+#ZADANIE 4
+plik = input("podaj nazwe pliku: ")
+otwieranie = open(plik, 'r')
+znaki = otwieranie.read()
+dodawanie = open(plik, 'a')
+dodawanie.write(" ")
+obecny = 0
+maksymalna = 0
+
+for element in znaki:
+    if element == " " or element == "\n":
+        maksymalna = max(obecny, maksymalna)
+        obecny = 0
+    else:
+        obecny += 1
+print("Najdluzszy wyraz w pliku ma: ", maksymalna)
+
+#ZADANIE 5
+def sprawdzCzestosc(nazwa_pliku):
+    txt = open(nazwa_pliku, 'r')
+    znaki = txt.read()
+    slowa = znaki.split()
+    slowo_do_obliczenia = input("Podaj slowo: ")
+    print(slowa.count(slowo_do_obliczenia))
+sprawdzCzestosc('hasla.txt')
+
+#ZADANIE 6
+import random
+def losoweSlowaZpliku(nazwa_pliku):
+    otwieranie = open(nazwa_pliku, 'r')
+    calyplik = otwieranie.read()
+    lista1 = calyplik.split()
+    dlugoscrandomizacji = len(lista1)-1
+
+    for i in range(10):
+        los = random.randint(1, dlugoscrandomizacji)
+        print(lista1[los])
+losoweSlowaZpliku('losowe.txt')
+
+#ZADANIE 7
+def czytaj_n_linii_pliku(nazwa_pliku, n):
+    otwieranie = open(nazwa_pliku, 'r')
+    linie = otwieranie.readlines()
+    for linia in linie[-n:]:
+        print(linia)
+czytaj_n_linii_pliku('losowe.txt', 3)
+
+#ZADANIE 8
+def laczenie_linii_z_pliku(plik1, plik2, wynik, n1, n2):
+    with open(plik1, 'r') as f1, open(plik2, 'r') as f2, open(wynik, 'w') as f3:
+        linie1 = f1.readlines()
+        linie2 = f2.readlines()
+        linia1 = linie1[n1-1]
+        linia2 = linie2[n2-1]
+        wynik = ' '.join([linia1.strip(), linia2.strip()])
+        f3.write(wynik)
+
+laczenie_linii_z_pliku('plik1L.txt', 'plik1P.txt', 'wynik.txt', 2, 2)
+
+#ZADANIE 9
+def usuwanieSpacji(nazwa_pliku, do_usuniecia):
+    with open(nazwa_pliku, 'r') as f:
+        tekst = f.read()
+    nowy_tekst = tekst.replace(do_usuniecia, '')
+    with open(nazwa_pliku, 'w') as f:
+        f.write(nowy_tekst)
+    for spr in tekst:
+        if spr == " ":
+            print("tu pojawiła się spacja")
+        else:
+            print("Wszystko OK")
+            break
+usuwanieSpacji('hasla.txt',' ')
+

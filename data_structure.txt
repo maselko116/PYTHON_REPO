@@ -1,0 +1,73 @@
+#ZDANIE 1
+print(slownik1.get('trzy'))
+
+#ZADANIE 2
+slownik1 = {'d1': 1.1, 'd2': 2.2, 'd3': 3.3}
+wynik = 1
+for klucz in slownik1:
+    wynik *= slownik1[klucz]
+print("Wynik to : ",wynik)
+
+#ZADANIE 3
+slownik1 = {'d1': 1.1, 'd2': 2.2, 'd3': 3.3}
+slownik2 = {'e1': 10, 'e2' : 11 , 'e3' : 12}
+slownik1.update(slownik2)
+print(slownik1)
+
+#ZADANIE 4
+slownik1 = {}
+x = 1#klucz
+ #wartosc
+n = int(input("Wprowadz wartosc do ktorej chcesz uzupelnic slownik: "))
+for i in range(1,n+1):
+    value = x ** 3
+    slownik1.update({x:value})
+    x += 1
+print(slownik1)
+
+#ZADANIE 5
+slownik1 = {'latarka': 3.99 , 'bidon': 4, 'baton':5.99, 'aparat':20}
+def sortowanko():
+    dlugosc = len(slownik1)+1
+    for slowa in range(1):
+        print(sorted(slownik1.items()))
+
+sortowanko()
+#ZADANIE 6
+def wypisz_unikalne_wartosci_ze_slownika(slownik):
+    unikalne_wartosci = set(slownik.values())
+    for wartosc in unikalne_wartosci:
+        print(wartosc)
+
+
+slownik = {'a': 'A201', 'b': 'B202', 'c':'B202', 'd':'H018', 'e':'H018', 'f': 'A007', 'g': 'G230'}
+wypisz_unikalne_wartosci_ze_slownika(slownik)
+
+#ZADANIE 7 
+def slownik_tekstowy(lancuch):
+    slownik = {}
+    for i, litera in enumerate(lancuch):
+        slownik[i] = litera
+    return slownik
+
+lancuch = "maslo"
+slownik = slownik_tekstowy(lancuch)
+print(slownik)
+
+#ZADANIE 8
+def czestosc_wystapienia(slownik, para):
+  liczba_wystapien = 0
+  for klucz, wartosc in slownik.items():
+    if klucz == para[0] and wartosc == para[1]:
+      liczba_wystapien += 1
+  return liczba_wystapien / len(slownik)
+
+# Define a dictionary
+slownik = {"a": 1, "b": 2, "c": 1}
+
+# Calculate the frequency of occurrence of the tuple ("a", 1)
+czestosc = czestosc_wystapienia(slownik, ("a", 1))
+
+print(czestosc)
+
+

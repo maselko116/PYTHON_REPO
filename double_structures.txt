@@ -1,0 +1,38 @@
+#ZADANIE 2
+def lista_liczb(liczby):
+    wynik = 1
+    for i in liczby:
+        wynik*= i
+    return wynik
+
+print(lista_liczb([1.1, 2.2, 3.3])) 
+
+#ZADANIE 3
+
+def min_max(liczby):
+    mini = liczby[0]
+    maxi = liczby[0]
+
+    for i in liczby:
+        if i < mini:
+            mini = i
+        if i > maxi:
+            maxi = i
+    print("wartosc min: ", mini)
+    print("wartosc max: ", maxi)
+tab1 = [1,2,4,6,8]
+min_max(tab1)
+
+#ZADANIE 4
+def usun_powtorzenia(lista):
+  nowa_lista = []
+  
+  for element in lista:
+    if element not in nowa_lista:
+      nowa_lista.append(element)
+  return nowa_lista
+
+
+lista = [1, 2, 3, 2, 4, 5, 6, 5, 7, 8]
+nowa_lista = usun_powtorzenia(lista)
+print(nowa_lista) 
