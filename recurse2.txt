@@ -1,0 +1,40 @@
+#ZADANIE 2
+def wzoryLicz(n):
+    if n <= 0:
+        return 0
+    else:
+        return n + wzoryLicz(n-2)
+print(wzoryLicz(6))
+#ZADANIE 3
+string = str(input("Wprowadz ciag znakow: "))
+def znakiOdKonca(string):
+    print(string[::-1])
+znakiOdKonca(string)
+
+////
+string = str(input("Wprowadz ciag znakow: "))
+dl = len(string)-1
+def znakiOdKonca(string):
+    if string[0] == string[dl]:
+        return string[0]
+    else:
+        return string[dl] + znakiOdKonca(dl-1)
+znakiOdKonca(string)
+#ZADANIE 4
+def wyliczCiag(n):
+    if n <= 1:
+        return 1
+    else:
+        return (1/n) + wyliczCiag(n-1)
+print(wyliczCiag(2))
+#ZADANIE 6
+def systemyBinarne(liczba,system):
+    if system ==  2:
+        if liczba <= 1
+            return 0
+        else:
+            return liczba / systemyBinarne(liczba%2,2)
+    if system == 16:
+        {
+            
+        }
